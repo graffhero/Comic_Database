@@ -7,7 +7,7 @@ f = open("Brett_Comic_Dump", "r")
 
 def find_issue():
     issue= input("What we searchin' for? ")
-    for row in csv.reader(f, delimiter= ","):
+    for row in csv.reader(f, delimiter= ";"):
         if re.search(issue, str(row[0])):
             print(row[0])
 
@@ -15,7 +15,7 @@ def find_issue():
 def find_creator():
     author= input("Who are we searchin' for? ")
     row: List[str]
-    for row in csv.reader(f, delimiter= ","):
+    for row in csv.reader(f, delimiter= ";"):
         if re.search(author, str(row[5])):
             print(row[0] + " was written by " + row[5])
 
